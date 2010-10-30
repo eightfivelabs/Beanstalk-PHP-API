@@ -6,7 +6,7 @@
 
 ## Usage ##
 Before using any of the following methods, you must first declare the following:
-	`$varname = new beanstalk_api();`
+`$varname = new beanstalk_api();`
 
 List of available function calls:
 
