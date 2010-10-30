@@ -9,8 +9,10 @@ class beanstalk_api {
 	private $username		= 'username';		// Beanstalk username
 	private $password		= 'password';		// Beanstalk password
 
-	/*
+	/**
 	 * Returns Beanstalk account details.
+	 *
+	 * @return xml
 	 */
 	function get_account_details() {
 		return $this->_execute_curl("account.xml");
@@ -21,15 +23,17 @@ class beanstalk_api {
 	 *
 	 * @param string $name			required
 	 * @param string $time_zone		required
-	 * @return string
+	 * @return xml
 	 */
 	function update_account_details($name, $time_zone) {
 		if(empty($name) || empty($time_zone))
 			return "Name and time zone required";
 	}
 
-	/*
+	/**
 	 * Returns Beanstalk account plans.
+	 *
+	 * @returns xml
 	 */
 	function find_all_plans() {
 		return $this->_execute_curl("plans.xml");
@@ -38,7 +42,7 @@ class beanstalk_api {
 	/**
 	 * Returns Beanstalk account user list.
 	 *
-	 * @return array
+	 * @return xml
 	 */
 	function find_all_users() {
 		return $this->_execute_curl("users.xml");
@@ -48,7 +52,7 @@ class beanstalk_api {
 	 * Returns a Beanstalk account user based on a specific user ID.
 	 *
 	 * @param string $user_id		required
-	 * @return string
+	 * @return xml
 	 */
 	function find_single_user($user_id) {
 		if(empty($user_id))
@@ -62,7 +66,7 @@ class beanstalk_api {
 	/**
 	 * Returns Beanstalk account repository list.
 	 *
-	 * @return array
+	 * @return xml
 	 */
 	function find_all_repositories() {
 		return $this->_execute_curl("repositories.xml");
@@ -72,7 +76,7 @@ class beanstalk_api {
 	 * Returns a Beanstalk account repository based on a specific repository ID.
 	 *
 	 * @param string $repo_id		required
-	 * @return string
+	 * @return xml
 	 */
 	function find_single_repository($repo_id) {
 		if(empty($repo_id))
@@ -86,7 +90,7 @@ class beanstalk_api {
 	/**
 	 * Returns Beanstalk account changeset list.
 	 *
-	 * @return array
+	 * @return xml
 	 */
 	function find_all_changesets() {
 		return $this->_execute_curl("changesets.xml");
@@ -96,7 +100,7 @@ class beanstalk_api {
 	 * Returns a Beanstalk repository changeset based on a specific repository ID.
 	 *
 	 * @param string $repo_id		required
-	 * @return string
+	 * @return xml
 	 */
 	function find_single_repository_changeset($repo_id) {
 		if(empty($repo_id))
@@ -111,7 +115,7 @@ class beanstalk_api {
 	 * Returns a Beanstalk repository's specific changeset based on a specific repository ID and changeset ID.
 	 *
 	 * @param string $repo_id		required
-	 * @return string
+	 * @return xml
 	 */
 	function find_single_changeset($changeset_id, $repo_id) {
 		if(empty($repo_id) || empty($changeset_id))
