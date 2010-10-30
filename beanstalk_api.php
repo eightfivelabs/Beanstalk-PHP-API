@@ -1,8 +1,9 @@
 <?php
 class beanstalk_api {
-	/*
+	/**
 	 * Beanstalk account configuration
 	 *
+	 * Please enter your account name, username and password below.
 	 */
 
 	private $account_name	= 'example';		// Beanstalk account name (first segment of your beanstalk URL - http://example.beanstalkapp.com)

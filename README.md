@@ -2,7 +2,7 @@
 
 ## Installation ##
 1. Copy beanstalk_api.php into a directory on your webserver
-2. Call beanstalk_api.php in the php file you wish to use it in using require\_once('path/beanstalk_api.php');
+2. Call beanstalk_api.php in the php file you wish to use it in using `require\_once('path/beanstalk_api.php');`
 
 ## Usage ##
 Before using any of the following methods, you must first declare the following:
