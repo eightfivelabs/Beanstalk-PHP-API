@@ -235,7 +235,7 @@ class beanstalk_api {
 	* @param string $release_id		required
 	* @return xml
 	*/
-	function find_all_sucessful_releases($repo_id, $release_id) {
+	function find_single_release($repo_id, $release_id) {
 		if(empty($repo_id) || empty($release_id))
 			return "Repository ID and release ID required";
 		else
