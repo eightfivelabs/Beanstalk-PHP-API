@@ -52,7 +52,7 @@ class beanstalk_api {
 	/**
 	 * Returns a Beanstalk account user based on a specific user ID
 	 *
-	 * @param string $user_id		required
+	 * @param integer $user_id		required
 	 * @return xml
 	 */
 	function find_single_user($user_id) {
@@ -74,7 +74,7 @@ class beanstalk_api {
 	/**
 	 * Returns a Beanstalk account repository based on a specific repository ID
 	 *
-	 * @param string $repo_id		required
+	 * @param integer $repo_id		required
 	 * @return xml
 	 */
 	function find_single_repository($repo_id) {
@@ -96,7 +96,7 @@ class beanstalk_api {
 	/**
 	 * Returns a Beanstalk repository changeset based on a specific repository ID
 	 *
-	 * @param string $repo_id		required
+	 * @param integer $repo_id		required
 	 * @return xml
 	 */
 	function find_single_repository_changeset($repo_id) {
@@ -109,20 +109,21 @@ class beanstalk_api {
 	/**
 	 * Returns a Beanstalk repository's specific changeset based on a specific repository ID and changeset ID
 	 *
-	 * @param string $repo_id		required
+	 * @param integer $repo_id		required
+	 * @param integer $revision		required
 	 * @return xml
 	 */
-	function find_single_changeset($changeset_id, $repo_id) {
-		if(empty($repo_id) || empty($changeset_id))
+	function find_single_changeset($repo_id, $revision) {
+		if(empty($repo_id) || empty($revision))
 			return "Changeset ID and repository ID required";
 		else
-			return $this->_execute_curl("changesets", $changeset_id . ".xml?repository_id=" . $repo_id);
+			return $this->_execute_curl("changesets", $revision . ".xml?repository_id=" . $repo_id);
 	}
 	
    /**
 	* Returns a Beanstalk repository's comment listing
 	*
-	* @param string $repo_id		required
+	* @param integer $repo_id		required
 	* @return xml
 	*/
 	function find_all_comments($repo_id) {
@@ -135,8 +136,8 @@ class beanstalk_api {
 	/**
 	* Returns a Beanstalk repository's comment listing for a specific changeset
 	*
-	* @param string $repo_id		required
-	* @param string $revision		required
+	* @param integer $repo_id		required
+	* @param integer $revision		required
 	* @return xml
 	*/
 	function find_all_changeset_comments($repo_id, $revision) {
@@ -149,8 +150,8 @@ class beanstalk_api {
 	/**
 	* Returns a Beanstalk repository's comment based on a specific comment ID
 	*
-	* @param string $repo_id		required
-	* @param string $revision		required
+	* @param integer $repo_id		required
+	* @param integer $revision		required
 	* @return xml
 	*/
 	function find_single_comment($repo_id, $comment_id) {
@@ -163,7 +164,7 @@ class beanstalk_api {
 	/**
 	* Returns a Beanstalk repository's server environment listing
 	*
-	* @param string $repo_id		required
+	* @param integer $repo_id		required
 	* @return xml
 	*/
 	function find_all_server_environments($repo_id) {
@@ -176,8 +177,8 @@ class beanstalk_api {
 	/**
 	* Returns a Beanstalk repository's server environment listing based on a specific environment ID
 	*
-	* @param string $repo_id		required
-	* @param string $environment_id	required
+	* @param integer $repo_id		required
+	* @param integer $environment_id	required
 	* @return xml
 	*/
 	function find_single_server_environment($repo_id, $environment_id) {
@@ -190,8 +191,8 @@ class beanstalk_api {
 	/**
 	* Returns a Beanstalk repository's release server listing
 	*
-	* @param string $repo_id		required
-	* @param string $environment_id	required
+	* @param integer $repo_id		required
+	* @param integer $environment_id	required
 	* @return xml
 	*/
 	function find_all_release_servers($repo_id, $environment_id) {
@@ -204,8 +205,8 @@ class beanstalk_api {
 	/**
 	* Returns a Beanstalk repository's release server listing based on a specific server ID
 	*
-	* @param string $repo_id		required
-	* @param string $server_id		required
+	* @param integer $repo_id		required
+	* @param integer $server_id		required
 	* @return xml
 	*/
 	function find_single_release_server($repo_id, $server_id) {
@@ -218,7 +219,7 @@ class beanstalk_api {
 	/**
 	* Returns a Beanstalk repository's successful releases listing
 	*
-	* @param string $repo_id		required
+	* @param integer $repo_id		required
 	* @return xml
 	*/
 	function find_all_sucessful_releases($repo_id) {
@@ -231,8 +232,8 @@ class beanstalk_api {
 	/**
 	* Returns a Beanstalk repository's release based on a specific release id
 	*
-	* @param string $repo_id		required
-	* @param string $release_id		required
+	* @param integer $repo_id		required
+	* @param integer $release_id		required
 	* @return xml
 	*/
 	function find_single_release($repo_id, $release_id) {

@@ -7,6 +7,7 @@
 
 ## Usage ##
 Before using any of the following methods, you must first declare the following:
+	
 `$varname = new beanstalk_api();`
 
 List of available function calls:
@@ -19,7 +20,7 @@ List of available function calls:
 * `find_single_repository(repo_id);`
 * `find_all_changesets();`
 * `find_single_repository_changeset(repo_id);`
-* `find_single_changeset(revision_number, repo_id);`
+* `find_single_changeset(repo_id, revision);`
 * `find_all_comments(repo_id);`
 * `find_all_changeset_comments(repo_id, revision);`
 * `find_single_comment(repo_id, comment_id);`
@@ -29,3 +30,14 @@ List of available function calls:
 * `find_single_release_server(repo_id, server_id);`
 * `find_all_successful_releases(repo_id);`
 * `find_single_release(repo_id, release_id);`
+
+Example simple test file:
+
+	<?php
+		require_once('libraries/beanstalk_api.php')
+		$beanstalk = new beanstalk_api();
+		
+		$account_details = $beanstalk->get_account_details();
+		
+		var_dump($account_details);
+	?>
