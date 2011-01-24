@@ -27,5 +27,5 @@ List of available function calls:
 * `find_single_server_environment(repo_id, environment_id);`
 * `find_all_release_servers(repo_id, environment_id);`
 * `find_single_release_server(repo_id, server_id);`
-* `find_all_successful_release(repo_id);`
+* `find_all_successful_releases(repo_id);`
 * `find_single_release(repo_id, release_id);`
