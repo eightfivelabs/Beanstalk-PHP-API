@@ -255,7 +255,7 @@ class beanstalk_api {
 			$ch = curl_init("http://" . $this->account_name . ".beanstalkapp.com/api/" . $api_name);
 		else
 			$ch = curl_init("http://" . $this->account_name . ".beanstalkapp.com/api/" . $api_name . "/" . $api_params);
-		var_dump($ch);
+			
 		$headers = array('Content-type: application/xml');
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($ch, CURLOPT_USERPWD, $this->username . ':' . $this->password);
