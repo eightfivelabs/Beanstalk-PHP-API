@@ -212,7 +212,7 @@ class beanstalk_api {
 		if(empty($repo_id) || empty($server_id))
 			return "Repository ID and server ID required";
 		else
-			return $this->_execute_curl($repo_id, "release_servers/" . $server_id . ".xml";
+			return $this->_execute_curl($repo_id, "release_servers/" . $server_id . ".xml");
 	}
 		
 	/**
